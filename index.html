@@ -76,24 +76,23 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-brand-rose selection:text-white">
 
-  <!-- ================= ANNOUNCEMENT BAR ================= -->
+  <!-- Announcement Bar -->
   <div class="bg-brand-forest text-brand-cream text-xs py-2 px-4 text-center font-medium tracking-wider flex items-center justify-center gap-2">
     <span>🌸 Handcrafted Velvet Blooms That Never Wither. Made to Order.</span>
     <span class="hidden md:inline text-brand-blush">• Direct Orders via Instagram DM & WhatsApp</span>
   </div>
 
-  <!-- ================= HEADER ================= -->
+  <!-- Header -->
   <header class="sticky top-0 z-40 bg-brand-cream/95 backdrop-blur-md border-b border-brand-sand transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="#" class="group flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-brand-rose/15 flex items-center justify-center text-brand-deeprose text-lg transition-transform group-hover:rotate-12">
+      <a href="#" class="group flex items-center gap-2.5 sm:gap-3">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-rose/15 flex items-center justify-center text-brand-deeprose text-base sm:text-lg transition-transform group-hover:rotate-12">
           <i class="fa-solid fa-seedling"></i>
         </div>
         <div>
-          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-brand-dark block leading-none">Flovalley</span>
-          <span class="text-[10px] tracking-[0.25em] text-brand-deeprose uppercase font-bold">Artisan Pipe Cleaner Flora</span>
+          <span class="font-serif text-xl sm:text-3xl font-bold tracking-tight text-brand-dark block leading-none">Flovalley</span>
+          <span class="text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.25em] text-brand-deeprose uppercase font-bold">Artisan Pipe Cleaner Flora</span>
         </div>
       </a>
 
@@ -111,21 +110,21 @@
         </button>
       </div>
 
-      <!-- Action Icons: Instagram, Cart -->
-      <div class="flex items-center gap-2.5 sm:gap-4">
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-4">
         <div id="syncBadge" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span id="syncStatusText">Synced</span>
         </div>
 
-        <a id="navIgLink" href="#" target="_blank" class="w-10 h-10 rounded-full border border-brand-sand flex items-center justify-center text-brand-dark hover:text-brand-rose hover:border-brand-rose transition" title="Visit Instagram">
-          <i class="fa-brands fa-instagram text-lg"></i>
+        <a id="navIgLink" href="#" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-brand-sand flex items-center justify-center text-brand-dark hover:text-brand-rose hover:border-brand-rose transition" title="Visit Instagram">
+          <i class="fa-brands fa-instagram text-base sm:text-lg"></i>
         </a>
 
-        <button id="cartBtn" class="relative bg-brand-forest hover:bg-brand-dark text-brand-cream px-4 py-2.5 rounded-full flex items-center gap-2.5 shadow hover:shadow-md transition">
-          <i class="fa-solid fa-bag-shopping text-sm"></i>
+        <button id="cartBtn" class="relative bg-brand-forest hover:bg-brand-dark text-brand-cream px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full flex items-center gap-2 shadow hover:shadow-md transition">
+          <i class="fa-solid fa-bag-shopping text-xs sm:text-sm"></i>
           <span class="text-xs sm:text-sm font-semibold">Bag</span>
-          <span id="cartCountBadge" class="bg-brand-rose text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+          <span id="cartCountBadge" class="bg-brand-rose text-white text-[10px] sm:text-[11px] font-bold w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center">0</span>
         </button>
       </div>
     </div>
@@ -133,132 +132,133 @@
     <!-- Mobile Search Row -->
     <div class="md:hidden px-4 pb-3">
       <div class="relative">
-        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-gray-400 text-sm"></i>
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-gray-400 text-xs"></i>
         <input 
           id="mobileSearchInput"
           type="text" 
           placeholder="Search flowers or design code (e.g. SUN)..." 
-          class="w-full bg-white border border-brand-sand rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-brand-rose text-brand-dark shadow-2xs"
+          class="w-full bg-white border border-brand-sand rounded-full pl-9 pr-4 py-1.5 text-xs focus:outline-none focus:border-brand-rose text-brand-dark shadow-2xs"
         />
       </div>
     </div>
   </header>
 
   <main class="flex-grow">
-    <!-- ================= HERO SLIDER ================= -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <div class="relative rounded-3xl overflow-hidden bg-brand-sand border border-brand-blush/60 shadow-xs min-h-[460px] md:min-h-[480px] flex items-center">
-        <div id="heroSlider" class="relative w-full h-full min-h-[460px] md:min-h-[480px]"></div>
+    <!-- ================= MOBILE-OPTIMIZED INSTANT HERO SLIDER ================= -->
+    <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-6">
+      <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-brand-sand border border-brand-blush/60 shadow-xs min-h-[520px] sm:min-h-[440px] md:min-h-[480px]">
+        <div id="heroSlider" class="relative w-full h-full min-h-[520px] sm:min-h-[440px] md:min-h-[480px]"></div>
 
-        <div class="absolute bottom-5 right-5 flex items-center gap-2.5 z-20">
-          <button id="sliderPrevBtn" aria-label="Previous Spotlight" class="w-9 h-9 rounded-full bg-white/85 backdrop-blur hover:bg-white text-brand-dark flex items-center justify-center shadow transition active:scale-95">
-            <i class="fa-solid fa-arrow-left text-xs"></i>
+        <!-- Slider Controls -->
+        <div class="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 flex items-center gap-2 z-20">
+          <button id="sliderPrevBtn" aria-label="Previous Spotlight" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 backdrop-blur hover:bg-white text-brand-dark flex items-center justify-center shadow transition active:scale-90">
+            <i class="fa-solid fa-arrow-left text-[11px] sm:text-xs"></i>
           </button>
-          <button id="sliderNextBtn" aria-label="Next Spotlight" class="w-9 h-9 rounded-full bg-white/85 backdrop-blur hover:bg-white text-brand-dark flex items-center justify-center shadow transition active:scale-95">
-            <i class="fa-solid fa-arrow-right text-xs"></i>
+          <button id="sliderNextBtn" aria-label="Next Spotlight" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 backdrop-blur hover:bg-white text-brand-dark flex items-center justify-center shadow transition active:scale-90">
+            <i class="fa-solid fa-arrow-right text-[11px] sm:text-xs"></i>
           </button>
         </div>
-        <div id="sliderDots" class="absolute bottom-6 left-6 flex items-center gap-2 z-20"></div>
+        <div id="sliderDots" class="absolute bottom-5 left-5 flex items-center gap-1.5 z-20"></div>
       </div>
     </section>
 
-    <!-- ================= PROPOSITIONS ================= -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
-        <div class="p-3.5 rounded-2xl bg-white border border-brand-sand shadow-2xs">
-          <div class="text-brand-rose text-lg mb-1"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <h4 class="font-bold text-xs text-brand-dark">Velvet Chenille Craft</h4>
-          <p class="text-[11px] text-gray-500">Dense, soft, bendable wire stems</p>
+    <!-- Propositions -->
+    <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 text-center">
+        <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-brand-sand shadow-2xs">
+          <div class="text-brand-rose text-base sm:text-lg mb-0.5"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h4 class="font-bold text-[11px] sm:text-xs text-brand-dark">Velvet Chenille Craft</h4>
+          <p class="text-[10px] sm:text-[11px] text-gray-500">Bendable soft wire stems</p>
         </div>
-        <div class="p-3.5 rounded-2xl bg-white border border-brand-sand shadow-2xs">
-          <div class="text-brand-sage text-lg mb-1"><i class="fa-solid fa-infinity"></i></div>
-          <h4 class="font-bold text-xs text-brand-dark">Never Dies or Withers</h4>
-          <p class="text-[11px] text-gray-500">Everlasting memory & keepsake</p>
+        <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-brand-sand shadow-2xs">
+          <div class="text-brand-sage text-base sm:text-lg mb-0.5"><i class="fa-solid fa-infinity"></i></div>
+          <h4 class="font-bold text-[11px] sm:text-xs text-brand-dark">Never Dies or Withers</h4>
+          <p class="text-[10px] sm:text-[11px] text-gray-500">Everlasting memory keepsake</p>
         </div>
-        <div class="p-3.5 rounded-2xl bg-white border border-brand-sand shadow-2xs">
-          <div class="text-brand-deeprose text-lg mb-1"><i class="fa-solid fa-barcode"></i></div>
-          <h4 class="font-bold text-xs text-brand-dark">Click-to-Copy Codes</h4>
-          <p class="text-[11px] text-gray-500">Tap code & paste directly in DM</p>
+        <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-brand-sand shadow-2xs">
+          <div class="text-brand-deeprose text-base sm:text-lg mb-0.5"><i class="fa-solid fa-barcode"></i></div>
+          <h4 class="font-bold text-[11px] sm:text-xs text-brand-dark">Click-to-Copy Codes</h4>
+          <p class="text-[10px] sm:text-[11px] text-gray-500">Tap code & paste in DM</p>
         </div>
-        <div class="p-3.5 rounded-2xl bg-white border border-brand-sand shadow-2xs">
-          <div class="text-brand-forest text-lg mb-1"><i class="fa-solid fa-gift"></i></div>
-          <h4 class="font-bold text-xs text-brand-dark">Complimentary Wrap</h4>
-          <p class="text-[11px] text-gray-500">Korean wrapping & satin ribbons</p>
+        <div class="p-3 sm:p-3.5 rounded-2xl bg-white border border-brand-sand shadow-2xs">
+          <div class="text-brand-forest text-base sm:text-lg mb-0.5"><i class="fa-solid fa-gift"></i></div>
+          <h4 class="font-bold text-[11px] sm:text-xs text-brand-dark">Complimentary Wrap</h4>
+          <p class="text-[10px] sm:text-[11px] text-gray-500">Korean wrapping & ribbons</p>
         </div>
       </div>
     </section>
 
-    <!-- ================= CATALOG ================= -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+    <!-- Catalog -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-5">
         <div>
-          <span class="text-xs uppercase tracking-widest font-bold text-brand-rose block">Available Creations</span>
-          <h2 class="font-serif text-3xl sm:text-4xl text-brand-dark font-bold mt-1">Explore The Flower Gallery</h2>
+          <span class="text-[11px] sm:text-xs uppercase tracking-widest font-bold text-brand-rose block">Available Creations</span>
+          <h2 class="font-serif text-2xl sm:text-4xl text-brand-dark font-bold mt-0.5">Explore The Flower Gallery</h2>
           <p class="text-gray-600 text-xs sm:text-sm mt-1 max-w-xl leading-relaxed">
-            Every flower is uniquely coded. Add multiple stems to your Bag to copy the complete order list, or send the code to our DM on Instagram.
+            Every flower has its own unique code. Add stems to your bag, copy the list, or send the code to our DM on Instagram.
           </p>
         </div>
 
         <div class="flex items-center gap-2 self-start md:self-auto">
-          <button id="refreshDataBtn" onclick="manualSync()" class="px-3.5 py-2 bg-white border border-brand-sand rounded-xl text-xs font-semibold text-brand-dark hover:border-brand-rose transition flex items-center gap-2 shadow-2xs">
+          <button id="refreshDataBtn" onclick="manualSync()" class="px-3 py-1.5 sm:px-3.5 sm:py-2 bg-white border border-brand-sand rounded-xl text-xs font-semibold text-brand-dark hover:border-brand-rose transition flex items-center gap-2 shadow-2xs">
             <i id="syncIcon" class="fa-solid fa-rotate text-brand-rose"></i>
             <span>Sync Catalog</span>
           </button>
         </div>
       </div>
 
-      <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-2 mb-6" id="categoryFilterContainer"></div>
+      <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-2 mb-4" id="categoryFilterContainer"></div>
 
-      <div class="flex items-center justify-between text-xs text-gray-500 mb-6">
+      <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
         <span id="productCountLabel">Loading flower catalog...</span>
         <button id="resetFiltersBtn" class="text-brand-deeprose hover:underline hidden font-medium">Clear search & filters</button>
       </div>
 
-      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+      <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6"></div>
 
       <div id="emptyCatalogState" class="hidden text-center py-16 bg-white rounded-3xl border border-brand-sand p-8">
-        <div class="w-16 h-16 bg-brand-sand rounded-full flex items-center justify-center mx-auto text-brand-rose text-2xl mb-4">
+        <div class="w-14 h-14 bg-brand-sand rounded-full flex items-center justify-center mx-auto text-brand-rose text-xl mb-3">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <h3 class="font-serif text-2xl font-bold text-brand-dark">No flowers matched your search</h3>
-        <p class="text-xs text-gray-500 mt-2 max-w-sm mx-auto">Try searching another flower species, or clear your filters to view all handcrafted items.</p>
-        <button onclick="resetFilters()" class="mt-5 px-5 py-2 bg-brand-forest text-white rounded-full text-xs font-semibold hover:bg-brand-dark transition">
+        <h3 class="font-serif text-xl font-bold text-brand-dark">No flowers matched your search</h3>
+        <p class="text-xs text-gray-500 mt-1 max-w-sm mx-auto">Try searching another flower species or reset filters.</p>
+        <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-brand-forest text-white rounded-full text-xs font-semibold hover:bg-brand-dark transition">
           View All Flowers
         </button>
       </div>
     </section>
 
-    <!-- ================= HOW TO ORDER ================= -->
-    <section class="bg-brand-sand/70 border-y border-brand-sand py-12">
+    <!-- How to Order -->
+    <section class="bg-brand-sand/70 border-y border-brand-sand py-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-xs uppercase tracking-widest font-bold text-brand-rose">No Complicated Forms</span>
-          <h2 class="font-serif text-3xl font-bold text-brand-dark mt-1">How Ordering Works</h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-2">Because each piece is custom handmade, we confirm orders personally via Instagram DM or WhatsApp.</p>
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-[11px] sm:text-xs uppercase tracking-widest font-bold text-brand-rose">No Complicated Forms</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-dark mt-1">How Ordering Works</h2>
+          <p class="text-xs sm:text-sm text-gray-600 mt-1.5">Because each bouquet is handmade, we confirm color customisation personally via Instagram DM or WhatsApp.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-3xl border border-brand-sand shadow-2xs">
-            <span class="w-8 h-8 rounded-full bg-brand-rose/20 text-brand-deeprose font-bold text-sm flex items-center justify-center mb-4">1</span>
-            <h3 class="font-bold text-base text-brand-dark">Pick Stems & Copy Code</h3>
-            <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-              Every flower has a clear code (e.g. <span class="bg-brand-cream border border-brand-sand font-mono px-1.5 py-0.5 rounded text-brand-dark text-[11px] font-bold">TUL-PNK-03</span>). Tap the code pill anywhere on the card to copy it immediately.
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-brand-sand shadow-2xs">
+            <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-brand-rose/20 text-brand-deeprose font-bold text-xs sm:text-sm flex items-center justify-center mb-3 sm:mb-4">1</span>
+            <h3 class="font-bold text-sm sm:text-base text-brand-dark">Pick Stems & Copy Code</h3>
+            <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+              Every flower has a clear code (e.g. <span class="bg-brand-cream border border-brand-sand font-mono px-1.5 py-0.5 rounded text-brand-dark text-[11px] font-bold">TUL-PNK-03</span>). Tap the code pill to copy it instantly.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-3xl border border-brand-sand shadow-2xs">
-            <span class="w-8 h-8 rounded-full bg-brand-sage/20 text-brand-forest font-bold text-sm flex items-center justify-center mb-4">2</span>
-            <h3 class="font-bold text-base text-brand-dark">Add to Bag & Copy All</h3>
-            <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-              Ordering multiple blooms? Add them to your Bag. Tap <strong>"Copy All Product Codes"</strong> to get a formatted list with quantities and prices ready to paste.
+          <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-brand-sand shadow-2xs">
+            <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-brand-sage/20 text-brand-forest font-bold text-xs sm:text-sm flex items-center justify-center mb-3 sm:mb-4">2</span>
+            <h3 class="font-bold text-sm sm:text-base text-brand-dark">Add to Bag & Copy All</h3>
+            <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+              Ordering multiple blooms? Add them to your Bag. Tap <strong>"Copy All Product Codes"</strong> to get a formatted list with quantities and prices.
             </p>
           </div>
 
-          <div class="bg-white p-6 rounded-3xl border border-brand-sand shadow-2xs">
-            <span class="w-8 h-8 rounded-full bg-brand-deeprose/20 text-brand-deeprose font-bold text-sm flex items-center justify-center mb-4">3</span>
-            <h3 class="font-bold text-base text-brand-dark">Send via Instagram or WhatsApp</h3>
-            <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-              Paste the codes in our DM. We verify date requirements, customize paper wrapping colors, and provide direct UPI payment details.
+          <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-brand-sand shadow-2xs">
+            <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-brand-deeprose/20 text-brand-deeprose font-bold text-xs sm:text-sm flex items-center justify-center mb-3 sm:mb-4">3</span>
+            <h3 class="font-bold text-sm sm:text-base text-brand-dark">Send via Instagram or WhatsApp</h3>
+            <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+              Paste the codes in our DM. We verify date requirements, customize paper wrapping colors, and provide UPI payment details.
             </p>
           </div>
         </div>
@@ -266,12 +266,12 @@
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="bg-brand-dark text-brand-cream border-t border-white/10 pt-12 pb-24 md:pb-12 text-sm">
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-brand-cream border-t border-white/10 pt-10 pb-20 md:pb-10 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
         <div class="md:col-span-2">
-          <div class="flex items-center gap-2 mb-3">
+          <div class="flex items-center gap-2 mb-2">
             <span class="w-8 h-8 rounded-full bg-brand-rose/20 flex items-center justify-center text-brand-rose">
               <i class="fa-solid fa-seedling"></i>
             </span>
@@ -309,22 +309,22 @@
     </div>
   </footer>
 
-  <!-- ================= MOBILE BAR ================= -->
+  <!-- Mobile Bottom Cart Bar -->
   <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-brand-sand px-4 py-2.5 z-40 flex items-center justify-between shadow-lg">
     <div class="flex flex-col">
       <span class="text-[10px] uppercase font-bold text-gray-400">Selected Flowers</span>
       <span id="mobileCartBarTotal" class="text-sm font-bold text-brand-dark">₹0 (0 items)</span>
     </div>
-    <button onclick="openCartDrawer()" class="bg-brand-forest text-white px-5 py-2 rounded-full text-xs font-semibold flex items-center gap-2 shadow">
+    <button onclick="openCartDrawer()" class="bg-brand-forest text-white px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow">
       <i class="fa-solid fa-bag-shopping"></i>
       <span>View Bag</span>
     </button>
   </div>
 
-  <!-- ================= CART DRAWER ================= -->
+  <!-- Cart Drawer -->
   <div id="cartDrawerBackdrop" class="fixed inset-0 bg-black/40 backdrop-blur-2xs z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
   <aside id="cartDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-brand-cream z-50 translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
-    <div class="p-5 border-b border-brand-sand flex items-center justify-between bg-white">
+    <div class="p-4 sm:p-5 border-b border-brand-sand flex items-center justify-between bg-white">
       <div class="flex items-center gap-2">
         <i class="fa-solid fa-bag-shopping text-brand-rose"></i>
         <h3 class="font-serif text-lg font-bold text-brand-dark">Your Flower Bag</h3>
@@ -338,85 +338,83 @@
     <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar"></div>
 
     <div id="cartEmptyState" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
-      <div class="w-16 h-16 rounded-full bg-brand-sand flex items-center justify-center text-brand-rose text-2xl mb-3">
+      <div class="w-14 h-14 rounded-full bg-brand-sand flex items-center justify-center text-brand-rose text-xl mb-3">
         <i class="fa-solid fa-basket-shopping"></i>
       </div>
-      <h4 class="font-serif text-xl font-bold text-brand-dark">Your bag is empty</h4>
+      <h4 class="font-serif text-lg font-bold text-brand-dark">Your bag is empty</h4>
       <p class="text-xs text-gray-500 mt-1 max-w-xs">Browse flowers from our catalog and add them to copy their design codes.</p>
       <button onclick="closeCartDrawer()" class="mt-4 px-5 py-2 bg-brand-forest text-white text-xs font-semibold rounded-full hover:bg-brand-dark transition">
         Explore Catalog
       </button>
     </div>
 
-    <div id="cartFooter" class="p-5 border-t border-brand-sand bg-white space-y-3 shadow-lg">
+    <div id="cartFooter" class="p-4 sm:p-5 border-t border-brand-sand bg-white space-y-2.5 shadow-lg">
       <div class="flex items-center justify-between text-sm">
         <span class="text-gray-500">Estimated Total</span>
         <span id="cartSubtotal" class="font-bold text-lg text-brand-dark">₹0</span>
       </div>
 
-      <button id="copyAllCodesBtn" class="w-full py-3 bg-brand-sand hover:bg-brand-blush text-brand-dark rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition border border-brand-blush shadow-2xs">
+      <button id="copyAllCodesBtn" class="w-full py-2.5 bg-brand-sand hover:bg-brand-blush text-brand-dark rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition border border-brand-blush shadow-2xs">
         <i class="fa-regular fa-copy text-sm text-brand-deeprose"></i>
         <span>Copy All Product Codes</span>
       </button>
 
-      <button id="orderInstagramBtn" class="w-full py-3 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-95 text-white rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition shadow">
+      <button id="orderInstagramBtn" class="w-full py-2.5 bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:opacity-95 text-white rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition shadow">
         <i class="fa-brands fa-instagram text-base"></i>
         <span>Order via Instagram DM</span>
       </button>
 
-      <button id="orderWhatsAppBtn" class="w-full py-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition shadow">
+      <button id="orderWhatsAppBtn" class="w-full py-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition shadow">
         <i class="fa-brands fa-whatsapp text-base"></i>
         <span>Order via WhatsApp</span>
       </button>
-
-      <p class="text-[10px] text-center text-gray-400">Tapping automatically copies your formatted order text ready to send!</p>
     </div>
   </aside>
 
-  <!-- ================= QUICK VIEW MODAL ================= -->
+  <!-- Quick View Modal -->
   <div id="quickViewBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-2xs z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-3 sm:p-4">
     <div id="quickViewModal" class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl scale-95 transition-transform duration-300 relative flex flex-col md:flex-row max-h-[92vh]">
-      <button id="closeQuickViewBtn" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-brand-dark flex items-center justify-center shadow transition">
+      <button id="closeQuickViewBtn" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-8 h-8 rounded-full bg-white/80 hover:bg-white text-brand-dark flex items-center justify-center shadow transition">
         <i class="fa-solid fa-xmark text-sm"></i>
       </button>
 
-      <div class="w-full md:w-1/2 bg-brand-sand flex flex-col justify-between p-4 sm:p-5">
+      <div class="w-full md:w-1/2 bg-brand-sand flex flex-col justify-between p-3 sm:p-5">
         <div id="modalMainImageContainer" class="w-full aspect-square rounded-2xl overflow-hidden bg-white shadow-2xs relative flex items-center justify-center"></div>
-        <div id="modalThumbnailsStrip" class="flex items-center gap-2 mt-3 overflow-x-auto hide-scrollbar py-1"></div>
+        <div id="modalThumbnailsStrip" class="flex items-center gap-2 mt-2 sm:mt-3 overflow-x-auto hide-scrollbar py-1"></div>
       </div>
 
-      <div class="w-full md:w-1/2 p-5 sm:p-6 flex flex-col justify-between overflow-y-auto custom-scrollbar">
+      <div class="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-between overflow-y-auto custom-scrollbar">
         <div>
-          <div class="flex items-center gap-2 mb-2">
+          <div class="flex items-center gap-2 mb-1.5">
             <span id="modalCategory" class="text-[10px] uppercase font-bold tracking-wider bg-brand-sand text-brand-deeprose px-2.5 py-0.5 rounded-full"></span>
             <span id="modalStockStatus" class="text-[10px] font-bold px-2 py-0.5 rounded-full"></span>
           </div>
 
-          <h3 id="modalTitle" class="font-serif text-2xl font-bold text-brand-dark leading-snug"></h3>
+          <h3 id="modalTitle" class="font-serif text-xl sm:text-2xl font-bold text-brand-dark leading-snug"></h3>
           
-          <div class="my-3.5 p-3 bg-brand-cream border border-brand-sand rounded-xl flex items-center justify-between">
+          <div class="my-2.5 sm:my-3.5 p-2.5 sm:p-3 bg-brand-cream border border-brand-sand rounded-xl flex items-center justify-between">
             <div>
               <span class="text-[10px] uppercase text-gray-500 font-semibold block">Design Code</span>
-              <span id="modalCode" class="font-mono font-bold text-sm text-brand-dark tracking-wide"></span>
+              <span id="modalCode" class="font-mono font-bold text-xs sm:text-sm text-brand-dark tracking-wide"></span>
             </div>
-            <button id="modalCopyCodeBtn" class="px-3 py-1.5 bg-white border border-brand-sand rounded-lg text-xs font-semibold text-brand-deeprose hover:bg-brand-rose hover:text-white transition flex items-center gap-1.5 shadow-2xs">
+            <button id="modalCopyCodeBtn" class="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-white border border-brand-sand rounded-lg text-xs font-semibold text-brand-deeprose hover:bg-brand-rose hover:text-white transition flex items-center gap-1.5 shadow-2xs">
               <i class="fa-regular fa-copy"></i>
               <span>Copy</span>
             </button>
           </div>
 
-          <div id="modalPrice" class="text-2xl font-bold text-brand-dark mb-2"></div>
-          <p id="modalDesc" class="text-xs text-gray-600 leading-relaxed mb-4"></p>
+          <div id="modalPrice" class="text-xl sm:text-2xl font-bold text-brand-dark mb-1"></div>
+          <p id="modalDesc" class="text-xs text-gray-600 leading-relaxed mb-3"></p>
           
-          <div class="border-t border-brand-sand pt-3 space-y-1.5 text-[11px] text-gray-500">
+          <div class="border-t border-brand-sand pt-2.5 space-y-1 text-[10px] sm:text-[11px] text-gray-500">
             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-sage"></i> <span>Bendable velvet chenille with floral wire core</span></div>
             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-sage"></i> <span>Gift-ready packaging with ribbon and greeting card</span></div>
             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-sage"></i> <span>Gentle fluffing keeps petals forever intact</span></div>
           </div>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-brand-sand flex gap-2">
-          <button id="modalAddToCartBtn" class="flex-1 py-3 bg-brand-forest hover:bg-brand-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider transition shadow flex items-center justify-center gap-2">
+        <div class="mt-4 pt-3 border-t border-brand-sand flex gap-2">
+          <button id="modalAddToCartBtn" class="flex-1 py-2.5 sm:py-3 bg-brand-forest hover:bg-brand-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider transition shadow flex items-center justify-center gap-2">
             <i class="fa-solid fa-bag-shopping"></i>
             <span>Add to Bag</span>
           </button>
@@ -425,7 +423,7 @@
     </div>
   </div>
 
-  <!-- ================= INSTAGRAM MODAL ================= -->
+  <!-- Instagram Modal -->
   <div id="igModalBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-2xs z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
     <div id="igModal" class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl scale-95 transition-transform duration-300">
       <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white flex items-center justify-center text-xl mx-auto mb-3 shadow">
@@ -451,13 +449,13 @@
     </div>
   </div>
 
-  <!-- Toast Notification -->
+  <!-- Toast -->
   <div id="toast" class="fixed bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 z-50 bg-brand-dark text-white text-xs py-2.5 px-5 rounded-full shadow-2xl flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300">
     <i class="fa-solid fa-circle-check text-brand-sage text-sm"></i>
     <span id="toastMsg">Code copied to clipboard!</span>
   </div>
 
-  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <!-- JavaScript -->
   <script>
     const FLOVALLEY_CONFIG = {
       storeName: "Flovalley",
@@ -465,17 +463,14 @@
       instagramUrl: "https://instagram.com/flovalley.in",
       whatsappNumber: "919337232170",
 
-      // Tab 1: Banners
       bannersCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPUL9PfBCOVLKdSpRqimCcFJD6-x8ZNqXSVY2lwi2tZbn6g4-5Piacq9565p5MO9V7UaNrLRj4WXx3/pub?gid=1532229935&single=true&output=csv",
-
-      // Tab 2: Products
       productsCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPUL9PfBCOVLKdSpRqimCcFJD6-x8ZNqXSVY2lwi2tZbn6g4-5Piacq9565p5MO9V7UaNrLRj4WXx3/pub?gid=0&single=true&output=csv",
 
       fallbackBanners: [
         {
           title: "The Tuscan Sunset Sunflower Ensemble",
           tag: "⭐ Bouquet of the Month",
-          description: "Our signature monthly bouquet featuring 5 handcrafted velvet sunflowers, dried eucalyptus accents, and warm peach micro-daisies in latte wrapping paper.",
+          description: "Signature monthly bouquet featuring 5 handcrafted velvet sunflowers, dried eucalyptus accents, and warm peach micro-daisies in latte wrapping paper.",
           code: "SUN-SET-08",
           price: 1299,
           image: "images/spotlight-sunflower.jpg",
@@ -484,7 +479,7 @@
         {
           title: "Blushing Rose French Tulip Trio",
           tag: "🌷 Fresh Spring Collection",
-          description: "A delicate arrangement of soft-pink velvet tulips with double-layered curved petals and deep green leaves. Never loses form.",
+          description: "Delicate arrangement of soft-pink velvet tulips with double-layered curved petals and deep green leaves. Never loses form.",
           code: "TUL-PNK-03",
           price: 499,
           image: "images/tul-pnk-03.jpg",
@@ -545,8 +540,9 @@
       ]
     };
 
-    let storeBanners = [];
-    let storeProducts = [];
+    // Initialize with fallback instantly so page never shows blank or lags
+    let storeBanners = [...FLOVALLEY_CONFIG.fallbackBanners];
+    let storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
     let currentSlide = 0;
     let sliderTimer = null;
     let selectedCategory = "All";
@@ -654,7 +650,7 @@
 
       if (syncIcon) syncIcon.classList.add("fa-spin");
 
-      // 1. Fetch Banners
+      // 1. Fetch Banners in background
       try {
         if (FLOVALLEY_CONFIG.bannersCsvUrl) {
           let bUrl = FLOVALLEY_CONFIG.bannersCsvUrl.replace("/pubhtml", "/pub?output=csv");
@@ -671,18 +667,14 @@
               image: b.image || "images/spotlight.jpg",
               button_text: b.button_text || "Add Spotlight To Bag"
             }));
-          } else {
-            storeBanners = [...FLOVALLEY_CONFIG.fallbackBanners];
+            initHeroSlider(); // Re-render with fresh sheet data
           }
-        } else {
-          storeBanners = [...FLOVALLEY_CONFIG.fallbackBanners];
         }
       } catch (err) {
-        console.warn("Using fallback banners", err);
-        storeBanners = [...FLOVALLEY_CONFIG.fallbackBanners];
+        console.warn("Retaining instant fallback banners:", err);
       }
 
-      // 2. Fetch Products
+      // 2. Fetch Products in background
       try {
         if (FLOVALLEY_CONFIG.productsCsvUrl) {
           let pUrl = FLOVALLEY_CONFIG.productsCsvUrl.replace("/pubhtml", "/pub?output=csv");
@@ -714,18 +706,14 @@
               syncBadge.classList.remove("hidden");
               syncBadge.className = "hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200";
             }
-          } else {
-            storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
+            initCategoryFilters();
+            renderProductGrid();
           }
-        } else {
-          storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
         }
       } catch (err) {
-        console.warn("Using fallback products", err);
-        storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
+        console.warn("Retaining fallback products:", err);
       } finally {
         if (syncIcon) syncIcon.classList.remove("fa-spin");
-        finishCatalogLoad();
       }
     }
 
@@ -733,13 +721,7 @@
       loadStoreCatalog();
     }
 
-    function finishCatalogLoad() {
-      initHeroSlider();
-      initCategoryFilters();
-      renderProductGrid();
-      renderCartUI();
-    }
-
+    /* Mobile-optimized, Responsive Hero Slider */
     function initHeroSlider() {
       const container = document.getElementById("heroSlider");
       const dotsContainer = document.getElementById("sliderDots");
@@ -753,42 +735,13 @@
 
       banners.forEach((slide, index) => {
         const slideEl = document.createElement("div");
-        slideEl.className = `absolute inset-0 transition-opacity duration-700 flex flex-col md:flex-row items-center justify-between p-6 sm:p-10 md:p-12 ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`;
+        slideEl.className = `absolute inset-0 transition-opacity duration-700 flex flex-col md:flex-row items-center justify-between p-4 sm:p-8 md:p-12 pb-14 sm:pb-8 ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`;
         slideEl.id = `hero-slide-${index}`;
         
         slideEl.innerHTML = `
-          <div class="w-full md:w-1/2 space-y-4 max-w-lg z-10">
-            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-brand-rose text-white shadow-2xs">
-              ${slide.tag}
-            </span>
-            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
-              ${slide.title}
-            </h1>
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              ${slide.description}
-            </p>
-            
-            <div class="flex flex-wrap items-center gap-3 pt-1">
-              <div class="bg-white px-3.5 py-1.5 rounded-xl border border-brand-blush flex items-center gap-2 shadow-2xs">
-                <span class="text-[10px] uppercase font-bold text-gray-400">Design Code</span>
-                <span class="font-mono font-bold text-sm text-brand-dark">${slide.code}</span>
-                <button onclick="copyProductCode('${slide.code}', event)" class="text-brand-rose hover:text-brand-dark transition" title="Copy code">
-                  <i class="fa-regular fa-copy text-xs"></i>
-                </button>
-              </div>
-              <span class="font-serif text-2xl font-bold text-brand-dark">₹${slide.price}</span>
-            </div>
-
-            <div class="pt-2 flex items-center gap-3">
-              <button onclick="addToBagByCode('${slide.code}')" class="px-6 py-3 bg-brand-forest hover:bg-brand-dark text-white rounded-full text-xs font-bold uppercase tracking-wider transition shadow flex items-center gap-2">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span>${slide.button_text}</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="w-full md:w-1/2 mt-6 md:mt-0 flex items-center justify-center relative">
-            <div class="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
+          <!-- Image First on Mobile, Right on Desktop -->
+          <div class="w-full md:w-1/2 flex items-center justify-center order-1 md:order-2 mb-3 md:mb-0">
+            <div class="w-48 h-48 sm:w-64 sm:h-64 md:w-88 md:h-88 rounded-2xl overflow-hidden shadow-lg border-2 sm:border-4 border-white bg-white">
               <img 
                 src="${slide.image}" 
                 alt="${slide.title}" 
@@ -797,11 +750,42 @@
               />
             </div>
           </div>
+
+          <!-- Text Details -->
+          <div class="w-full md:w-1/2 space-y-2 sm:space-y-3.5 max-w-lg z-10 order-2 md:order-1 text-center md:text-left">
+            <span class="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-brand-rose text-white shadow-2xs">
+              ${slide.tag}
+            </span>
+            <h1 class="font-serif text-xl sm:text-3xl md:text-5xl font-bold text-brand-dark leading-snug sm:leading-tight">
+              ${slide.title}
+            </h1>
+            <p class="text-xs sm:text-sm text-gray-600 line-clamp-2 sm:line-clamp-none leading-relaxed">
+              ${slide.description}
+            </p>
+            
+            <div class="flex items-center justify-center md:justify-start gap-2.5 sm:gap-3 pt-0.5">
+              <div class="bg-white px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-xl border border-brand-blush flex items-center gap-1.5 shadow-2xs">
+                <span class="text-[9px] sm:text-[10px] uppercase font-bold text-gray-400">Code</span>
+                <span class="font-mono font-bold text-xs sm:text-sm text-brand-dark">${slide.code}</span>
+                <button onclick="copyProductCode('${slide.code}', event)" class="text-brand-rose hover:text-brand-dark transition ml-1" title="Copy code">
+                  <i class="fa-regular fa-copy text-xs"></i>
+                </button>
+              </div>
+              <span class="font-serif text-lg sm:text-2xl font-bold text-brand-dark">₹${slide.price}</span>
+            </div>
+
+            <div class="pt-1 flex items-center justify-center md:justify-start">
+              <button onclick="addToBagByCode('${slide.code}')" class="w-full sm:w-auto px-5 py-2.5 sm:px-6 sm:py-3 bg-brand-forest hover:bg-brand-dark text-white rounded-full text-xs font-bold uppercase tracking-wider transition shadow active:scale-95 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>${slide.button_text}</span>
+              </button>
+            </div>
+          </div>
         `;
         container.appendChild(slideEl);
 
         const dot = document.createElement("button");
-        dot.className = `h-2.5 rounded-full transition-all ${index === 0 ? 'bg-brand-rose w-7' : 'bg-brand-blush w-2.5'}`;
+        dot.className = `h-2 rounded-full transition-all ${index === 0 ? 'bg-brand-rose w-6' : 'bg-brand-blush w-2'}`;
         dot.onclick = () => goToSlide(index, banners.length);
         dotsContainer.appendChild(dot);
       });
@@ -828,8 +812,8 @@
       const dots = document.getElementById("sliderDots").children;
       for (let i = 0; i < dots.length; i++) {
         dots[i].className = (i === currentSlide) 
-          ? "w-7 h-2.5 rounded-full bg-brand-rose transition-all" 
-          : "w-2.5 h-2.5 rounded-full bg-brand-blush transition-all";
+          ? "w-6 h-2 rounded-full bg-brand-rose transition-all" 
+          : "w-2 h-2 rounded-full bg-brand-blush transition-all";
       }
     }
 
@@ -863,7 +847,7 @@
       uniqueCats.forEach(cat => {
         const btn = document.createElement("button");
         btn.innerText = cat;
-        btn.className = `px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all border ${
+        btn.className = `px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all border ${
           selectedCategory === cat 
             ? 'bg-brand-forest text-white border-brand-forest shadow-2xs' 
             : 'bg-white text-brand-dark border-brand-sand hover:border-brand-rose'
@@ -910,7 +894,7 @@
         const mainImage = item.images[0] || "";
 
         return `
-          <div class="bg-white rounded-3xl overflow-hidden border border-brand-sand/90 hover:shadow-lg transition-all duration-300 flex flex-col group ${isSoldOut ? 'opacity-75' : ''}">
+          <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-brand-sand/90 hover:shadow-lg transition-all duration-300 flex flex-col group ${isSoldOut ? 'opacity-75' : ''}">
             <div class="relative bg-brand-sand aspect-square overflow-hidden cursor-pointer" onclick="openQuickView('${item.code}')">
               <img 
                 src="${mainImage}" 
@@ -919,58 +903,58 @@
                 onerror="this.parentElement.innerHTML = getFloralPlaceholderSvg('#C57B74', '${item.title}')"
               />
 
-              <div class="absolute top-3 left-3 flex flex-col gap-1.5">
-                ${item.tag ? `<span class="bg-brand-dark/85 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">${item.tag}</span>` : ''}
-                ${isSoldOut ? `<span class="bg-red-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Sold Out</span>` : ''}
+              <div class="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-col gap-1">
+                ${item.tag ? `<span class="bg-brand-dark/85 backdrop-blur-xs text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">${item.tag}</span>` : ''}
+                ${isSoldOut ? `<span class="bg-red-700 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Sold Out</span>` : ''}
               </div>
 
               <button 
                 onclick="event.stopPropagation(); openQuickView('${item.code}')"
-                class="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-brand-dark w-9 h-9 rounded-full flex items-center justify-center shadow transition active:scale-95"
+                class="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 bg-white/90 hover:bg-white text-brand-dark w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center shadow transition active:scale-95"
                 title="View Photo Gallery & Details"
               >
-                <i class="fa-regular fa-eye text-xs"></i>
+                <i class="fa-regular fa-eye text-[10px] sm:text-xs"></i>
               </button>
             </div>
 
-            <div class="p-5 flex-1 flex flex-col justify-between">
+            <div class="p-3 sm:p-5 flex-1 flex flex-col justify-between">
               <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-deeprose bg-brand-rose/10 px-2 py-0.5 rounded-md">
+                <div class="flex items-center justify-between gap-1 sm:gap-2 mb-1 sm:mb-2">
+                  <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-brand-deeprose bg-brand-rose/10 px-1.5 py-0.5 rounded-md truncate max-w-[80px] sm:max-w-none">
                     ${item.category}
                   </span>
                   
                   <div 
                     onclick="copyProductCode('${item.code}', event)"
-                    class="cursor-pointer group/tag flex items-center gap-1.5 bg-brand-cream border border-brand-sand hover:border-brand-rose px-2.5 py-1 rounded-lg transition"
-                    title="Click to copy product code"
+                    class="cursor-pointer group/tag flex items-center gap-1 bg-brand-cream border border-brand-sand hover:border-brand-rose px-2 py-0.5 rounded-lg transition"
+                    title="Click to copy code"
                   >
-                    <span class="font-mono text-[11px] font-bold text-brand-dark group-hover/tag:text-brand-rose">${item.code}</span>
-                    <i class="fa-regular fa-copy text-[10px] text-gray-400 group-hover/tag:text-brand-rose"></i>
+                    <span class="font-mono text-[10px] sm:text-[11px] font-bold text-brand-dark group-hover/tag:text-brand-rose">${item.code}</span>
+                    <i class="fa-regular fa-copy text-[9px] sm:text-[10px] text-gray-400 group-hover/tag:text-brand-rose"></i>
                   </div>
                 </div>
 
-                <h3 onclick="openQuickView('${item.code}')" class="font-serif text-lg font-bold text-brand-dark group-hover:text-brand-rose transition cursor-pointer">
+                <h3 onclick="openQuickView('${item.code}')" class="font-serif text-sm sm:text-lg font-bold text-brand-dark group-hover:text-brand-rose transition cursor-pointer line-clamp-1">
                   ${item.title}
                 </h3>
-                <p class="text-xs text-gray-500 mt-1 line-clamp-2 leading-relaxed">
+                <p class="text-[11px] sm:text-xs text-gray-500 mt-1 line-clamp-2 leading-relaxed hidden sm:block">
                   ${item.description}
                 </p>
               </div>
 
-              <div class="mt-4 pt-3 border-t border-brand-sand flex items-center justify-between">
+              <div class="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-brand-sand flex items-center justify-between">
                 <div>
-                  <span class="text-[10px] uppercase text-gray-400 block font-semibold">Price</span>
-                  <span class="font-serif text-xl font-bold text-brand-dark">₹${item.price}</span>
+                  <span class="text-[9px] uppercase text-gray-400 block font-semibold hidden sm:block">Price</span>
+                  <span class="font-serif text-base sm:text-xl font-bold text-brand-dark">₹${item.price}</span>
                 </div>
 
                 <button 
                   onclick="addToBagByCode('${item.code}')"
                   ${isSoldOut ? 'disabled' : ''}
-                  class="${isSoldOut ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-brand-sand hover:bg-brand-forest hover:text-white text-brand-dark'} text-xs font-bold px-4 py-2.5 rounded-full transition duration-200 flex items-center gap-1.5"
+                  class="${isSoldOut ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-brand-sand hover:bg-brand-forest hover:text-white text-brand-dark'} text-[11px] sm:text-xs font-bold px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-full transition duration-200 flex items-center gap-1 active:scale-95"
                 >
-                  <i class="fa-solid fa-plus text-xs"></i>
-                  <span>${isSoldOut ? 'Sold Out' : 'Add'}</span>
+                  <i class="fa-solid fa-plus text-[10px]"></i>
+                  <span>${isSoldOut ? 'Out' : 'Add'}</span>
                 </button>
               </div>
             </div>
@@ -1069,9 +1053,9 @@
       footer.classList.remove("hidden");
 
       listContainer.innerHTML = cart.map(item => `
-        <div class="bg-white p-3.5 rounded-2xl border border-brand-sand flex items-center justify-between gap-3 shadow-2xs">
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-xl bg-brand-sand overflow-hidden flex-shrink-0 flex items-center justify-center">
+        <div class="bg-white p-3 rounded-2xl border border-brand-sand flex items-center justify-between gap-3 shadow-2xs">
+          <div class="flex items-center gap-2.5">
+            <div class="w-11 h-11 rounded-xl bg-brand-sand overflow-hidden flex-shrink-0 flex items-center justify-center">
               <img 
                 src="${item.image}" 
                 alt="${item.title}" 
@@ -1080,19 +1064,17 @@
               />
             </div>
             <div>
-              <div class="flex items-center gap-2">
-                <span class="font-mono text-xs font-bold text-brand-deeprose bg-brand-sand/60 px-1.5 py-0.5 rounded">${item.code}</span>
-              </div>
-              <h4 class="font-semibold text-xs text-brand-dark mt-0.5">${item.title}</h4>
+              <span class="font-mono text-[11px] font-bold text-brand-deeprose bg-brand-sand/60 px-1.5 py-0.5 rounded">${item.code}</span>
+              <h4 class="font-semibold text-xs text-brand-dark mt-0.5 line-clamp-1">${item.title}</h4>
               <span class="text-xs font-bold text-brand-dark">₹${item.price} each</span>
             </div>
           </div>
 
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1.5">
             <div class="flex items-center border border-brand-sand rounded-lg bg-brand-cream">
-              <button onclick="updateCartQuantity('${item.code}', -1)" class="w-6 h-6 flex items-center justify-center text-xs text-gray-500 hover:text-brand-dark">-</button>
-              <span class="w-6 text-center text-xs font-bold">${item.quantity}</span>
-              <button onclick="updateCartQuantity('${item.code}', 1)" class="w-6 h-6 flex items-center justify-center text-xs text-gray-500 hover:text-brand-dark">+</button>
+              <button onclick="updateCartQuantity('${item.code}', -1)" class="w-5 h-5 flex items-center justify-center text-xs text-gray-500 hover:text-brand-dark">-</button>
+              <span class="w-5 text-center text-xs font-bold">${item.quantity}</span>
+              <button onclick="updateCartQuantity('${item.code}', 1)" class="w-5 h-5 flex items-center justify-center text-xs text-gray-500 hover:text-brand-dark">+</button>
             </div>
             <button onclick="removeCartItem('${item.code}')" class="text-gray-400 hover:text-brand-deeprose text-xs p-1" title="Remove">
               <i class="fa-regular fa-trash-can"></i>
@@ -1216,7 +1198,7 @@ Could you please confirm availability and delivery dispatch? Thank you!`;
         thumbsContainer.innerHTML = images.map((img, idx) => `
           <button 
             onclick="setModalImageIndex(${idx})" 
-            class="w-14 h-14 rounded-xl overflow-hidden border-2 flex-shrink-0 transition ${idx === selectedModalImageIndex ? 'border-brand-rose scale-105 shadow-xs' : 'border-white opacity-70 hover:opacity-100'}"
+            class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden border-2 flex-shrink-0 transition ${idx === selectedModalImageIndex ? 'border-brand-rose scale-105 shadow-xs' : 'border-white opacity-70 hover:opacity-100'}"
           >
             <img src="${img}" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/FAF7F2/C57B74?text=Flower'"/>
           </button>
@@ -1276,6 +1258,7 @@ Could you please confirm availability and delivery dispatch? Thank you!`;
       modal.classList.add("scale-95");
     }
 
+    // Immediately execute on load — 0 delay
     window.onload = function() {
       document.getElementById("currentYear").innerText = new Date().getFullYear();
 
@@ -1283,13 +1266,19 @@ Could you please confirm availability and delivery dispatch? Thank you!`;
       document.getElementById("footerIgLink").href = FLOVALLEY_CONFIG.instagramUrl;
       document.getElementById("footerWaLink").href = `https://wa.me/${FLOVALLEY_CONFIG.whatsappNumber}`;
 
+      // 1. Render immediately with zero blank screen
+      initHeroSlider();
+      initCategoryFilters();
+      renderProductGrid();
+      renderCartUI();
+
+      // 2. Fetch fresh live Google Sheet data in the background
       loadStoreCatalog();
 
       document.getElementById("cartBtn").addEventListener("click", openCartDrawer);
       document.getElementById("closeCartBtn").addEventListener("click", closeCartDrawer);
       document.getElementById("cartDrawerBackdrop").addEventListener("click", closeCartDrawer);
 
-      // Slider Navigation Hooks
       document.getElementById("sliderNextBtn").onclick = slideNext;
       document.getElementById("sliderPrevBtn").onclick = slidePrev;
 
