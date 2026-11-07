@@ -292,12 +292,13 @@
         </div>
 
         <div>
-          <h4 class="font-bold text-xs uppercase tracking-wider text-brand-rose mb-3">Store Administration</h4>
-          <p class="text-xs text-gray-400 mb-3">Manage prices, photos, and stock directly from your Google Sheet.</p>
-          <button onclick="openSetupModal()" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-brand-cream transition flex items-center gap-2 border border-white/10">
-            <i class="fa-solid fa-gear text-brand-blush"></i>
-            <span>Google Sheet Setup Guide</span>
-          </button>
+          <h4 class="font-bold text-xs uppercase tracking-wider text-brand-rose mb-3">Custom Orders</h4>
+          <p class="text-xs text-gray-400 mb-3 leading-relaxed">
+            Need custom colors, anniversary bouquets, or bulk event gifts? Drop us a DM with your reference ideas.
+          </p>
+          <span class="inline-block px-3 py-1.5 rounded-full bg-white/10 text-[11px] font-semibold text-brand-blush border border-white/10">
+            Handcrafted with Care
+          </span>
         </div>
       </div>
 
@@ -450,56 +451,7 @@
     </div>
   </div>
 
-  <!-- ================= SETUP MODAL ================= -->
-  <div id="setupModalBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-2xs z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
-    <div id="setupModal" class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto custom-scrollbar">
-      <div class="flex items-center justify-between border-b border-brand-sand pb-4 mb-4">
-        <div class="flex items-center gap-2.5">
-          <div class="w-9 h-9 rounded-xl bg-brand-rose/15 text-brand-deeprose flex items-center justify-center text-sm">
-            <i class="fa-solid fa-table-cells"></i>
-          </div>
-          <div>
-            <h3 class="font-serif text-xl font-bold text-brand-dark">Google Sheet Inventory Setup</h3>
-            <span class="text-xs text-gray-500">Update prices & photos from an online Excel sheet for free</span>
-          </div>
-        </div>
-        <button onclick="closeSetupModal()" class="w-8 h-8 rounded-full hover:bg-brand-sand flex items-center justify-center text-gray-500 hover:text-brand-dark transition">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <div class="space-y-4 text-xs text-gray-600 leading-relaxed">
-        <div>
-          <h4 class="font-bold text-brand-dark text-sm mb-1">Step 1: Set Google Sheet Headers</h4>
-          <p class="mb-2">Ensure your spreadsheet's Row 1 has these exact headers:</p>
-          <div class="bg-brand-cream border border-brand-sand p-2.5 rounded-xl font-mono text-[11px] overflow-x-auto text-brand-dark select-all">
-            code, title, category, price, status, tag, images, description
-          </div>
-        </div>
-
-        <div>
-          <h4 class="font-bold text-brand-dark text-sm mb-1">Step 2: Publish Sheet as CSV</h4>
-          <ol class="list-decimal list-inside space-y-1 text-gray-600">
-            <li>In Google Sheets, click <strong>File &gt; Share &gt; Publish to web</strong>.</li>
-            <li>Change "Web page" to <strong>Comma-separated values (.csv)</strong>.</li>
-            <li>Click <strong>Publish</strong> and copy the URL.</li>
-          </ol>
-        </div>
-
-        <div class="pt-3 border-t border-brand-sand">
-          <label class="font-bold text-brand-dark block mb-1">Test your CSV URL right now:</label>
-          <div class="flex gap-2">
-            <input id="testSheetUrlInput" type="text" placeholder="https://docs.google.com/spreadsheets/d/e/.../pub?output=csv" class="flex-1 bg-brand-cream border border-brand-sand rounded-xl px-3 py-2 text-xs text-brand-dark focus:outline-none focus:border-brand-rose">
-            <button onclick="applyTestSheetUrl()" class="px-4 py-2 bg-brand-forest hover:bg-brand-dark text-white rounded-xl text-xs font-bold transition">
-              Load URL
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast -->
+  <!-- Toast Notification -->
   <div id="toast" class="fixed bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 z-50 bg-brand-dark text-white text-xs py-2.5 px-5 rounded-full shadow-2xl flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300">
     <i class="fa-solid fa-circle-check text-brand-sage text-sm"></i>
     <span id="toastMsg">Code copied to clipboard!</span>
@@ -513,32 +465,62 @@
       instagramUrl: "https://instagram.com/flovalley.in",
       whatsappNumber: "919337232170",
 
-      // Normalized to output=csv so Google returns pure data
-      googleSheetCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPUL9PfBCOVLKdSpRqimCcFJD6-x8ZNqXSVY2lwi2tZbn6g4-5Piacq9565p5MO9V7UaNrLRj4WXx3/pub?output=csv",
+      // Tab 1: Banners
+      bannersCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPUL9PfBCOVLKdSpRqimCcFJD6-x8ZNqXSVY2lwi2tZbn6g4-5Piacq9565p5MO9V7UaNrLRj4WXx3/pub?gid=1532229935&single=true&output=csv",
+
+      // Tab 2: Products
+      productsCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPUL9PfBCOVLKdSpRqimCcFJD6-x8ZNqXSVY2lwi2tZbn6g4-5Piacq9565p5MO9V7UaNrLRj4WXx3/pub?gid=0&single=true&output=csv",
+
+      fallbackBanners: [
+        {
+          title: "The Tuscan Sunset Sunflower Ensemble",
+          tag: "⭐ Bouquet of the Month",
+          description: "Our signature monthly bouquet featuring 5 handcrafted velvet sunflowers, dried eucalyptus accents, and warm peach micro-daisies in latte wrapping paper.",
+          code: "SUN-SET-08",
+          price: 1299,
+          image: "images/spotlight-sunflower.jpg",
+          button_text: "Add Spotlight To Bag"
+        },
+        {
+          title: "Blushing Rose French Tulip Trio",
+          tag: "🌷 Fresh Spring Collection",
+          description: "A delicate arrangement of soft-pink velvet tulips with double-layered curved petals and deep green leaves. Never loses form.",
+          code: "TUL-PNK-03",
+          price: 499,
+          image: "images/tul-pnk-03.jpg",
+          button_text: "Add Spotlight To Bag"
+        },
+        {
+          title: "Crimson Velvet Rose Bunch",
+          tag: "🌹 Forever Romantic",
+          description: "Trio of classic deep scarlet chenille roses wrapped in frosted waterproof kraft paper with champagne satin bow.",
+          code: "ROS-RED-05",
+          price: 899,
+          image: "images/ros-red-05.jpg",
+          button_text: "Add Spotlight To Bag"
+        }
+      ],
 
       fallbackProducts: [
         {
           code: "SUN-SET-08",
-          title: "The Tuscan Sunset Sunflower Ensemble",
+          title: "The Tuscan Sunset Ensemble",
           category: "Bouquets",
           price: 1299,
           status: "In Stock",
-          tag: "⭐ Bouquet of the Month",
-          images: [
-            "images/spotlight-sunflower.jpg",
-            "images/sun-detail-1.jpg"
-          ],
-          description: "Our signature monthly bouquet featuring 5 handcrafted velvet sunflowers, dried eucalyptus accents, and warm peach micro-daisies in latte wrapping paper."
+          tag: "Bestseller",
+          images: ["images/spotlight-sunflower.jpg"],
+          description: "5 handcrafted velvet sunflowers with eucalyptus."
         },
         {
           code: "TUL-PNK-03",
-          title: "Blushing Rose French Tulip Trio",
+          title: "Blushing Rose Tulip Trio",
           category: "Tulips",
           price: 499,
           status: "In Stock",
-          tag: "Bestseller",
+          tag: "Popular",
           images: ["images/tul-pnk-03.jpg"],
-          description: "A delicate arrangement of soft-pink velvet tulips with double-layered curved petals and deep green leaves. Never loses form."
+          description: "Soft-pink velvet tulips with double curved petals."
         },
         {
           code: "SUN-SGL-01",
@@ -548,7 +530,7 @@
           status: "In Stock",
           tag: "Popular",
           images: ["images/sun-sgl-01.jpg"],
-          description: "A single vibrant sunflower with textured seed center. The metal core stem bends to fit any desk vase."
+          description: "Single vibrant sunflower with textured seed center."
         },
         {
           code: "ROS-RED-05",
@@ -558,11 +540,12 @@
           status: "In Stock",
           tag: "Romantic",
           images: ["images/ros-red-05.jpg"],
-          description: "Trio of classic deep scarlet chenille roses wrapped in frosted waterproof kraft paper with champagne satin bow."
+          description: "Trio of classic deep scarlet chenille roses wrapped in frosted kraft paper."
         }
       ]
     };
 
+    let storeBanners = [];
     let storeProducts = [];
     let currentSlide = 0;
     let sliderTimer = null;
@@ -614,50 +597,19 @@
 
       if (lines.length < 2) return [];
 
-      const headers = lines[0].map(h => h.toLowerCase().replace(/[^a-z0-9]/g, ''));
-      const parsedProducts = [];
+      const headers = lines[0].map(h => h.toLowerCase().replace(/[^a-z0-9_]/g, ''));
+      const results = [];
 
       for (let r = 1; r < lines.length; r++) {
         const row = lines[r];
         if (row.length === 0 || !row[0]) continue;
-
         const item = {};
         headers.forEach((h, idx) => {
           item[h] = row[idx] || '';
         });
-
-        const code = (item.code || item.id || `FLO-${r}`).toUpperCase().replace(/\s+/g, '-');
-        const title = item.title || item.name || "Handcrafted Bloom";
-        const category = item.category || "Bouquets";
-        
-        let priceNum = 0;
-        if (item.price) {
-          const cleanPrice = String(item.price).replace(/[^0-9.]/g, '');
-          priceNum = parseFloat(cleanPrice) || 0;
-        }
-
-        let imagesArray = [];
-        if (item.images || item.image || item.photos) {
-          const rawImgs = item.images || item.image || item.photos;
-          imagesArray = rawImgs.split(/[,;]/).map(s => s.trim()).filter(s => s.length > 0);
-        }
-        if (imagesArray.length === 0) {
-          imagesArray = [`images/${code.toLowerCase()}.jpg`];
-        }
-
-        parsedProducts.push({
-          code: code,
-          title: title,
-          category: category,
-          price: priceNum,
-          status: (item.status && item.status.toLowerCase().includes('sold')) ? "Sold Out" : "In Stock",
-          tag: item.tag || "",
-          images: imagesArray,
-          description: item.description || item.desc || "Handcrafted with premium velvet chenille pipe cleaners."
-        });
+        results.push(item);
       }
-
-      return parsedProducts;
+      return results;
     }
 
     function getFloralPlaceholderSvg(color = "#C57B74", title = "Handcrafted Flower") {
@@ -695,56 +647,82 @@
       `;
     }
 
-    async function loadStoreCatalog(forceUrl = null) {
-      let url = forceUrl || FLOVALLEY_CONFIG.googleSheetCsvUrl;
+    async function loadStoreCatalog() {
       const syncStatusText = document.getElementById("syncStatusText");
       const syncBadge = document.getElementById("syncBadge");
       const syncIcon = document.getElementById("syncIcon");
 
       if (syncIcon) syncIcon.classList.add("fa-spin");
 
-      // Auto-correct pubhtml to output=csv if needed
-      if (url && url.includes("/pubhtml")) {
-        url = url.replace("/pubhtml", "/pub?output=csv");
-      }
-
-      if (!url) {
-        storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
-        if (syncStatusText) syncStatusText.innerText = "Offline Mode";
-        if (syncBadge) {
-          syncBadge.classList.remove("hidden");
-          syncBadge.className = "hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-brand-sand text-brand-dark border border-brand-blush";
-        }
-        if (syncIcon) syncIcon.classList.remove("fa-spin");
-        finishCatalogLoad();
-        return;
-      }
-
+      // 1. Fetch Banners
       try {
-        const response = await fetch(url + (url.includes('?') ? '&' : '?') + 't=' + Date.now());
-        if (!response.ok) throw new Error("Network response failed");
-        const csvData = await response.text();
-        const parsed = parseCsvToObjects(csvData);
-
-        if (parsed.length > 0) {
-          storeProducts = parsed;
-          if (syncStatusText) syncStatusText.innerText = "Live Synced";
-          if (syncBadge) {
-            syncBadge.classList.remove("hidden");
-            syncBadge.className = "hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200";
+        if (FLOVALLEY_CONFIG.bannersCsvUrl) {
+          let bUrl = FLOVALLEY_CONFIG.bannersCsvUrl.replace("/pubhtml", "/pub?output=csv");
+          const bRes = await fetch(bUrl + (bUrl.includes('?') ? '&' : '?') + 't=' + Date.now());
+          const bCsv = await bRes.text();
+          const rawBanners = parseCsvToObjects(bCsv);
+          if (rawBanners.length > 0) {
+            storeBanners = rawBanners.map(b => ({
+              title: b.title || "Special Bouquet",
+              tag: b.tag || "⭐ Bouquet of the Month",
+              description: b.description || "Handcrafted with premium velvet chenille.",
+              code: (b.code || "FLO-BQT").toUpperCase(),
+              price: parseFloat(String(b.price).replace(/[^0-9.]/g, '')) || 0,
+              image: b.image || "images/spotlight.jpg",
+              button_text: b.button_text || "Add Spotlight To Bag"
+            }));
+          } else {
+            storeBanners = [...FLOVALLEY_CONFIG.fallbackBanners];
           }
-          showToast("Catalog synced with Google Sheet!");
         } else {
-          throw new Error("Empty CSV");
+          storeBanners = [...FLOVALLEY_CONFIG.fallbackBanners];
         }
       } catch (err) {
-        console.warn("Could not fetch Google Sheet, loading fallback data", err);
-        storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
-        if (syncStatusText) syncStatusText.innerText = "Fallback Mode";
-        if (syncBadge) {
-          syncBadge.classList.remove("hidden");
-          syncBadge.className = "hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-200";
+        console.warn("Using fallback banners", err);
+        storeBanners = [...FLOVALLEY_CONFIG.fallbackBanners];
+      }
+
+      // 2. Fetch Products
+      try {
+        if (FLOVALLEY_CONFIG.productsCsvUrl) {
+          let pUrl = FLOVALLEY_CONFIG.productsCsvUrl.replace("/pubhtml", "/pub?output=csv");
+          const pRes = await fetch(pUrl + (pUrl.includes('?') ? '&' : '?') + 't=' + Date.now());
+          const pCsv = await pRes.text();
+          const rawProds = parseCsvToObjects(pCsv);
+          if (rawProds.length > 0) {
+            storeProducts = rawProds.map(p => {
+              const code = (p.code || "FLO-01").toUpperCase().replace(/\s+/g, '-');
+              let imgArr = [];
+              if (p.images || p.image) {
+                imgArr = (p.images || p.image).split(/[,;]/).map(s => s.trim()).filter(Boolean);
+              }
+              if (imgArr.length === 0) imgArr = [`images/${code.toLowerCase()}.jpg`];
+
+              return {
+                code: code,
+                title: p.title || p.name || "Handcrafted Flower",
+                category: p.category || "Bouquets",
+                price: parseFloat(String(p.price).replace(/[^0-9.]/g, '')) || 0,
+                status: (p.status && p.status.toLowerCase().includes('sold')) ? "Sold Out" : "In Stock",
+                tag: p.tag || "",
+                images: imgArr,
+                description: p.description || "Handcrafted with velvet chenille pipe cleaners."
+              };
+            });
+            if (syncStatusText) syncStatusText.innerText = "Live Synced";
+            if (syncBadge) {
+              syncBadge.classList.remove("hidden");
+              syncBadge.className = "hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200";
+            }
+          } else {
+            storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
+          }
+        } else {
+          storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
         }
+      } catch (err) {
+        console.warn("Using fallback products", err);
+        storeProducts = [...FLOVALLEY_CONFIG.fallbackProducts];
       } finally {
         if (syncIcon) syncIcon.classList.remove("fa-spin");
         finishCatalogLoad();
@@ -769,15 +747,11 @@
 
       container.innerHTML = "";
       dotsContainer.innerHTML = "";
+      currentSlide = 0;
 
-      let spotlights = storeProducts.filter(p => 
-        p.tag && (p.tag.toLowerCase().includes('spotlight') || p.tag.toLowerCase().includes('month'))
-      );
-      if (spotlights.length === 0) {
-        spotlights = storeProducts.slice(0, 3);
-      }
+      const banners = storeBanners.length > 0 ? storeBanners : FLOVALLEY_CONFIG.fallbackBanners;
 
-      spotlights.forEach((slide, index) => {
+      banners.forEach((slide, index) => {
         const slideEl = document.createElement("div");
         slideEl.className = `absolute inset-0 transition-opacity duration-700 flex flex-col md:flex-row items-center justify-between p-6 sm:p-10 md:p-12 ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`;
         slideEl.id = `hero-slide-${index}`;
@@ -785,7 +759,7 @@
         slideEl.innerHTML = `
           <div class="w-full md:w-1/2 space-y-4 max-w-lg z-10">
             <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-brand-rose text-white shadow-2xs">
-              ${slide.tag || "⭐ Bouquet of the Month"}
+              ${slide.tag}
             </span>
             <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
               ${slide.title}
@@ -808,7 +782,7 @@
             <div class="pt-2 flex items-center gap-3">
               <button onclick="addToBagByCode('${slide.code}')" class="px-6 py-3 bg-brand-forest hover:bg-brand-dark text-white rounded-full text-xs font-bold uppercase tracking-wider transition shadow flex items-center gap-2">
                 <i class="fa-solid fa-bag-shopping"></i>
-                <span>Add Spotlight To Bag</span>
+                <span>${slide.button_text}</span>
               </button>
             </div>
           </div>
@@ -816,7 +790,7 @@
           <div class="w-full md:w-1/2 mt-6 md:mt-0 flex items-center justify-center relative">
             <div class="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
               <img 
-                src="${slide.images[0]}" 
+                src="${slide.image}" 
                 alt="${slide.title}" 
                 class="w-full h-full object-cover transition duration-500 hover:scale-105"
                 onerror="this.parentElement.innerHTML = getFloralPlaceholderSvg('#C57B74', '${slide.title}')"
@@ -827,19 +801,22 @@
         container.appendChild(slideEl);
 
         const dot = document.createElement("button");
-        dot.className = `w-2.5 h-2.5 rounded-full transition-all ${index === 0 ? 'bg-brand-rose w-7' : 'bg-brand-blush'}`;
-        dot.onclick = () => goToSlide(index, spotlights.length);
+        dot.className = `h-2.5 rounded-full transition-all ${index === 0 ? 'bg-brand-rose w-7' : 'bg-brand-blush w-2.5'}`;
+        dot.onclick = () => goToSlide(index, banners.length);
         dotsContainer.appendChild(dot);
       });
 
-      startSliderTimer(spotlights.length);
+      startSliderTimer(banners.length);
     }
 
     function goToSlide(index, total) {
+      if (total <= 0) return;
+      currentSlide = (index + total) % total;
+
       for (let i = 0; i < total; i++) {
         const el = document.getElementById(`hero-slide-${i}`);
         if (!el) continue;
-        if (i === index) {
+        if (i === currentSlide) {
           el.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
           el.classList.add('opacity-100', 'z-10');
         } else {
@@ -850,20 +827,30 @@
 
       const dots = document.getElementById("sliderDots").children;
       for (let i = 0; i < dots.length; i++) {
-        dots[i].className = (i === index) 
+        dots[i].className = (i === currentSlide) 
           ? "w-7 h-2.5 rounded-full bg-brand-rose transition-all" 
           : "w-2.5 h-2.5 rounded-full bg-brand-blush transition-all";
       }
-      currentSlide = index;
+    }
+
+    function slideNext() {
+      const total = storeBanners.length > 0 ? storeBanners.length : FLOVALLEY_CONFIG.fallbackBanners.length;
+      goToSlide(currentSlide + 1, total);
+      startSliderTimer(total);
+    }
+
+    function slidePrev() {
+      const total = storeBanners.length > 0 ? storeBanners.length : FLOVALLEY_CONFIG.fallbackBanners.length;
+      goToSlide(currentSlide - 1, total);
+      startSliderTimer(total);
     }
 
     function startSliderTimer(total) {
       if (total <= 1) return;
       clearInterval(sliderTimer);
       sliderTimer = setInterval(() => {
-        const next = (currentSlide + 1) % total;
-        goToSlide(next, total);
-      }, 6500);
+        goToSlide(currentSlide + 1, total);
+      }, 5500);
     }
 
     function initCategoryFilters() {
@@ -1003,7 +990,19 @@
     }
 
     function addToBagByCode(code) {
-      const item = storeProducts.find(p => p.code === code);
+      let item = storeProducts.find(p => p.code === code);
+      if (!item) {
+        item = storeBanners.find(b => b.code === code);
+        if (item) {
+          item = {
+            code: item.code,
+            title: item.title,
+            price: item.price,
+            category: "Bouquets",
+            images: [item.image]
+          };
+        }
+      }
       if (!item) return;
 
       const existing = cart.find(ci => ci.code === item.code);
@@ -1014,8 +1013,8 @@
           code: item.code,
           title: item.title,
           price: item.price,
-          category: item.category,
-          image: item.images[0] || "",
+          category: item.category || "Bouquets",
+          image: item.images ? item.images[0] : (item.image || ""),
           quantity: 1
         });
       }
@@ -1277,32 +1276,6 @@ Could you please confirm availability and delivery dispatch? Thank you!`;
       modal.classList.add("scale-95");
     }
 
-    function openSetupModal() {
-      const backdrop = document.getElementById("setupModalBackdrop");
-      const modal = document.getElementById("setupModal");
-      backdrop.classList.remove("opacity-0", "pointer-events-none");
-      modal.classList.remove("scale-95");
-      modal.classList.add("scale-100");
-    }
-
-    function closeSetupModal() {
-      const backdrop = document.getElementById("setupModalBackdrop");
-      const modal = document.getElementById("setupModal");
-      backdrop.classList.add("opacity-0", "pointer-events-none");
-      modal.classList.remove("scale-100");
-      modal.classList.add("scale-95");
-    }
-
-    function applyTestSheetUrl() {
-      const testUrl = document.getElementById("testSheetUrlInput").value.trim();
-      if (!testUrl) {
-        showToast("Please enter a valid CSV URL");
-        return;
-      }
-      closeSetupModal();
-      loadStoreCatalog(testUrl);
-    }
-
     window.onload = function() {
       document.getElementById("currentYear").innerText = new Date().getFullYear();
 
@@ -1316,18 +1289,9 @@ Could you please confirm availability and delivery dispatch? Thank you!`;
       document.getElementById("closeCartBtn").addEventListener("click", closeCartDrawer);
       document.getElementById("cartDrawerBackdrop").addEventListener("click", closeCartDrawer);
 
-      document.getElementById("sliderNextBtn").addEventListener("click", () => {
-        const total = document.getElementById("sliderDots").children.length || 1;
-        const next = (currentSlide + 1) % total;
-        goToSlide(next, total);
-        startSliderTimer(total);
-      });
-      document.getElementById("sliderPrevBtn").addEventListener("click", () => {
-        const total = document.getElementById("sliderDots").children.length || 1;
-        const prev = (currentSlide - 1 + total) % total;
-        goToSlide(prev, total);
-        startSliderTimer(total);
-      });
+      // Slider Navigation Hooks
+      document.getElementById("sliderNextBtn").onclick = slideNext;
+      document.getElementById("sliderPrevBtn").onclick = slidePrev;
 
       document.getElementById("closeQuickViewBtn").addEventListener("click", closeQuickView);
       document.getElementById("quickViewBackdrop").addEventListener("click", (e) => {
